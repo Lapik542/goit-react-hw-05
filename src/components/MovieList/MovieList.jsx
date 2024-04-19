@@ -1,7 +1,5 @@
 
-import MovieCard from './MovieCard';
-
-const MovieList = ({ movies }) => {
+const MovieList = () => {
   return (
   <>
   </>

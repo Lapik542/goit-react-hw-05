@@ -1,0 +1,11 @@
+.movieDetailsContainer {
+    display: flex;
+    gap: 60px;
+}
+
+.movieContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    padding: 10px 30px;
+}

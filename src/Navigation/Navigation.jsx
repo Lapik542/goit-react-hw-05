@@ -1,8 +1,26 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink } from "react-router-dom";
 
-const Navigation = () => {
+import css from "./Navigation.module.css";
+
+const Navigation = ({buildLinkClass}) => {
   return (
     <>
+    <nav>
+      <ul className={css.mainNavPages}>
+        <NavLink to="/homepage" className={buildLinkClass}>
+          Home
+          </NavLink>
+        <NavLink to="/movie-details-page" className={buildLinkClass}>
+          MovieDetailsPage
+          </NavLink>
+        <NavLink to="/movies-page" className={buildLinkClass}>
+          MoviesPage
+          </NavLink>
+        <NavLink to="/*" className={buildLinkClass}>
+          NotFoundPage
+          </NavLink>
+      </ul>
+    </nav>
     </>
   );
 };
