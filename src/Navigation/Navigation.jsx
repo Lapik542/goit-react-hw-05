@@ -10,9 +10,6 @@ const Navigation = ({buildLinkClass}) => {
         <NavLink to="/homepage" className={buildLinkClass}>
           Home
           </NavLink>
-        <NavLink to="/movie-details-page" className={buildLinkClass}>
-          MovieDetailsPage
-          </NavLink>
         <NavLink to="/movies-page" className={buildLinkClass}>
           MoviesPage
           </NavLink>

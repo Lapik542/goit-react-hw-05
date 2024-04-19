@@ -1,21 +1,26 @@
+import { useParams } from "react-router-dom";
 import css from "./MovieDetailsPage.module.css";
+
 const MovieDetailsPage = () => {
+
+  const {movieId} = useParams();
+  console.log(movieId);
 
   return (
     <div className={css.container}>
       <h1>MovieDetailsPage</h1>
       <div className={css.movieDetailsContainer}>
         <div className={css.movieContainer}>
-          <h2>Movie 1</h2>
-          <p>Details 1</p>
+          <h2>Movie {movieId}</h2>
+          <p>Details {movieId}</p>
           </div>
         <div className={css.movieContainer}>
-          <h2>Movie 2</h2>
-          <p>Details 2</p>
+          <h2>Movie {movieId}</h2>
+          <p>Details {movieId}</p>
           </div>
         <div className={css.movieContainer}>
-          <h2>Movie 3</h2>
-          <p>Details 3</p>
+          <h2>Movie {movieId}</h2>
+          <p>Details {movieId}</p>
         </div>
       </div>
     </div>
