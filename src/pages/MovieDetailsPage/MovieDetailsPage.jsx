@@ -1,10 +1,18 @@
 import { useParams } from "react-router-dom";
 import css from "./MovieDetailsPage.module.css";
+import { useEffect } from "react";
 
 const MovieDetailsPage = () => {
 
   const {movieId} = useParams();
-  console.log(movieId);
+
+  useEffect(() => {
+    const load = async () => {
+      const res = await fetchMovieById(movieId)
+      console.log(res);
+    }
+    load();
+  }, [movieId]);
 
   return (
     <div className={css.container}>

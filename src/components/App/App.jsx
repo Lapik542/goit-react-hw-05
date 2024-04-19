@@ -23,8 +23,12 @@ const App = () => {
 
     <Routes>
       <Route path="homepage" element={<HomePage />} />
-      <Route path="movies-page" element={<MoviesPage />} />
-      <Route path="movies-page/movie-details-page/:movieId" element={<MovieDetailsPage />} />
+
+      <Route path="movies-page" element={<MoviesPage />} >
+        <Route path=":movieId" element={<div>More info about id</div>} />
+        <Route path="movie-details-page/:movieId" element={<MovieDetailsPage />} />
+      </Route>
+
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
     </>
