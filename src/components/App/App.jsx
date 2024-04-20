@@ -29,11 +29,12 @@ const App = () => {
   return (
     <>
     <Navigation />
+    <hr />
 
     <Routes>
       <Route path="/" element={<HomePage movies={movies} />} key="/" />
-      <Route path="/movie" element={<MoviesPage />} key="/movie" />
-      <Route path="/movies/:movieId" element={<MovieDetailsPage />} key="/moviedetailspage" >
+      <Route path="/movies" element={<MoviesPage />} key="/movie" />
+      <Route path="/movies/:movieId" element={<MovieDetailsPage movies={movies} />} key="/moviedetailspage" >
         <Route path="/movies/:movieId/cast" element={<MovieCast />} key="/movie" />
         <Route path="/movies/:movieId/reviews" element={<MovieReviews />} key="/moviereviews" />
       </Route>
