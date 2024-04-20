@@ -1,22 +1,23 @@
+
 import axios from 'axios';
 
-const baseURL = 'https://api.themoviedb.org/3';
-const apiKey = '0ddf8c05707f4cf9f269ffc03308d921';
+const url = '/3/trending/movie/day';
+axios.defaults.baseURL = 'https://api.themoviedb.org/';
 
-const axiosInstance = axios.create({
-  baseURL,
-  headers: {
-    Authorization: `Bearer ${apiKey}`,
-  },
-});
+export const getTrendingMovies = async () => {
+  const response = await axios.get(url);
+  return response.data;
+}
 
-export const searchMovies = async (query) => {
-  try {
-    const response = await axiosInstance.get(`/search/movie?query=${query}`);
-    return response.data;
-  } catch (error) {
-    console.error('Error searching movies:', error);
-    throw error;
-  }
+getTrendingMovies();
+
+const options = {
+headers: {
+Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDRmYTI4NTgwMTEzZTUwYTAwODMxNzI5Y2RiNDJkMSIsInN1YiI6IjY2MjM2MmI0MjU4ODIzMDE3ZDkwOWJlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mS_cHseR5EDi-5aiqYNp3cVvehK5zvx4jsV2vweECnY'
+}
 };
+
+axios.get(url, options)
+.then(response => console.log(response.data))
+.catch(err => console.error(err));
 
