@@ -8,7 +8,10 @@ const MoviesPage = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${searchQuery}`, {
+      const response = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
+        params: {
+          query: searchQuery
+        },
         headers: {
           Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI2ZDRmYTI4NTgwMTEzZTUwYTAwODMxNzI5Y2RiNDJkMSIsInN1YiI6IjY2MjM2MmI0MjU4ODIzMDE3ZDkwOWJlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.mS_cHseR5EDi-5aiqYNp3cVvehK5zvx4jsV2vweECnY'
         }
@@ -27,7 +30,7 @@ const MoviesPage = () => {
         onChange={(e) => setSearchQuery(e.target.value)} 
       />
       <button onClick={handleSearch}>Search</button>
-      {searchResult && (
+      {searchResult && searchResult.results && (
         <div>
           <h2>Search Result</h2>
           <ul>
